@@ -9,11 +9,13 @@ class HomeHeaderForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.only(top: m_gap),
       child: Align(
         //자기 부모 끝까지 늘어나기 때문에 정렬 가능
-        alignment: Alignment(-0.6, 0), // (x, ) 정중앙이 0,0 비율로 맨 왼쪽이 -1 맨 오른쪽이 1
+        alignment: screenWidth < 520 ? Alignment(0,0) : Alignment(-0.6, 0),
+        // (x, ) 정중앙이 0,0 비율로 맨 왼쪽이 -1 맨 오른쪽이 1
         child: Container(
           width: 420,
           //데코레이션을 쓰면, 컨테이너의 color 속성을 쓰면 안됨.
